@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+/* ─── Paleta de la boda ───────────────────────────────
+   Un solo lugar para todos los colores. En los
+   componentes se usan como bg-cream, text-cocoa, etc. */
+@theme {
+  --color-sage: #aeb8a5; /* verde salvia */
+  --color-sage-dark: #8fa083; /* salvia oscuro (hover/acentos) */
+  --color-cocoa: #6b5b55; /* café principal (títulos) */
+  --color-taupe: #7a6a63; /* café suave (texto) */
+  --color-ink: #6f6763; /* texto de párrafos */
+  --color-cream: #f8f5f0; /* fondo claro principal */
+  --color-sand: #f7f2ec; /* fondo alterno */
+  --color-linen: #efe8de; /* bordes suaves */
+  --color-champagne: #d8c8a8; /* champaña */
+  --color-blush: #d9bdb5; /* rosa empolvado */
+  --color-blush-dark: #c9a89f; /* rosa hover */
+  --color-gold: #c9a66b; /* dorado (divisores) */
+}
+
+.font-title {
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+.font-body {
+  font-family: var(--font-montserrat), Arial, sans-serif;
+}
+
+body {
+  background: #f8f5f0;
+  color: #6f6763;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: #d8c8a8;
+  color: #6b5b55;
+}
+
+/* Evitar doble línea de scroll en página principal */
+html,
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
