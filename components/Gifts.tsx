@@ -32,16 +32,38 @@ export default function Gifts() {
 
             <p className="text-ink leading-relaxed text-base md:text-lg mb-6">
               Si deseas tener un detalle con nosotros, agradeceremos una
-              lluvia de sobres para acompañarnos en el inicio de esta nueva
-              etapa.
+              lluvia de sobres que nos acompañe en el inicio de esta nueva etapa.
             </p>
 
-            <div className="flex items-center justify-center gap-3">
+            <div className="flex items-center justify-center gap-3 mb-10">
               <span className="h-px w-10 bg-gold/50" />
               <p className="text-taupe italic text-sm md:text-base">
                 El día de la celebración encontrarás un cofre para tu sobre
               </p>
               <span className="h-px w-10 bg-gold/50" />
+            </div>
+
+            {/* Bre-B */}
+            <p className="uppercase tracking-[4px] text-sage text-xs md:text-sm mb-6">
+              O si prefieres, por Bre-B
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-6">
+              {[
+                { name: "Lau", key: "318 477 7740", src: "/images/qr-lau.png" },
+                { name: "Sebas", key: "@amigo1023937126", src: "/images/qr-sebas.jpeg" },
+              ].map((p) => (
+                <div key={p.name} className="flex flex-col items-center">
+                  <p className="font-title text-xl text-cocoa mb-3">{p.name}</p>
+                  <div className="w-40 sm:w-44 bg-sand/40 rounded-2xl p-3">
+                    <img
+                      src={p.src}
+                      alt={`Código QR Bre-B de ${p.name}`}
+                      className="w-full h-auto"
+                    />
+                  </div>
+                  <p className="text-taupe text-sm mt-3">{p.key}</p>
+                </div>
+              ))}
             </div>
           </div>
         </AnimatedSection>

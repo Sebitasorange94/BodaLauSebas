@@ -13,8 +13,8 @@ interface AnimatedSectionProps {
 
 /**
  * Entrada de sección: rápida y elegante.
- * Sin blur (costoso en móviles) y con desplazamiento corto
- * para que el contenido aparezca ágil.
+ * Con un blur suave al aparecer (probar impacto en móviles;
+ * si se siente lento, bajar blur o volver a quitarlo).
  */
 export default function AnimatedSection({
   children,
@@ -24,11 +24,11 @@ export default function AnimatedSection({
 }: AnimatedSectionProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y, filter: "blur(8px)" }}
+      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{
-        duration: 0.6,
+        duration: 0.7,
         delay,
         ease: [0.22, 1, 0.36, 1],
       }}
