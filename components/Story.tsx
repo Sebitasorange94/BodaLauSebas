@@ -57,11 +57,25 @@ const AUTOPLAY_DELAY = 7000; // ms de inactividad antes de avanzar solo
 export default function Story() {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(0);
+  const [isSectionVisible, setIsSectionVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement | null>(null);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const total = timeline.length;
   const isFirst = index === 0;
   const isLast = index === total - 1;
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsSectionVisible(entry.isIntersecting);
+    });
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
 
   // newIndex fuera de rango se ignora en navegación manual (goTo),
   // pero el autoplay usa goToLoop para poder volver al inicio.
@@ -84,6 +98,7 @@ export default function Story() {
   // (manual o del propio autoplay) y programa el siguiente avance.
   useEffect(() => {
     if (timerRef.current) clearTimeout(timerRef.current);
+    if (!isSectionVisible) return;
 
     timerRef.current = setTimeout(() => {
       setDirection(1);
@@ -93,7 +108,7 @@ export default function Story() {
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current);
     };
-  }, [index, total]);
+  }, [index, isSectionVisible, total]);
 
   const handleDragEnd = (
     _: MouseEvent | TouchEvent | PointerEvent,
@@ -122,6 +137,7 @@ export default function Story() {
 
   return (
     <section
+      ref={sectionRef}
       id="story"
       className="relative isolate overflow-hidden bg-[#f2e8e2] py-20 md:bg-cream md:py-28"
     >
