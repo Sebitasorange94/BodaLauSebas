@@ -12,7 +12,7 @@ const nextConfig: NextConfig = {
       },
       {
         pathname: "/images/story/**",
-        search: "?v=20261019",
+        search: "?v=20261019-2145",
       },
       {
         pathname: "/images/dress-code/**",

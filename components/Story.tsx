@@ -12,42 +12,42 @@ const timeline = [
     title: "Todo comenzó sin esperarlo",
     description:
       "Gracias a una amiga en común comenzamos a hablar. Lo que empezó como una amistad nos permitió conocernos, compartir momentos especiales y acercarnos también a nuestras familias.",
-    image: "/images/story/01.jpg?v=20261019",
+    image: "/images/story/01.jpg?v=20261019-2145",
   },
   {
     year: "2023",
     title: "Una tarde, un café y muchas risas",
     description:
       "Nuestra primera cita fue en Libre de Culpa. Entre café, conversaciones y risas descubrimos que había algo especial entre nosotros.",
-    image: "/images/story/02.jpg?v=20261019",
+    image: "/images/story/02.jpg?v=20261019-2145",
   },
   {
     year: "2023",
     title: "Nuestro primer viaje",
     description:
       "Diciembre nos regaló nuestra primera aventura juntos. Sogamoso se convirtió en el escenario de recuerdos que todavía llevamos en el corazón.",
-    image: "/images/story/03.jpg?v=20261019",
+    image: "/images/story/03.jpg?v=20261019-2145",
   },
   {
     year: "2024",
     title: "Comenzó oficialmente nuestra historia",
     description:
       "En febrero decidimos dar el siguiente paso y comenzar este camino como pareja.",
-    image: "/images/story/04.jpg?v=20261019",
+    image: "/images/story/04.jpg?v=20261019-2145",
   },
   {
     year: "2025",
     title: "Explorando el mundo juntos",
     description:
       "Panamá y Brasil se convirtieron en nuevas páginas de nuestra historia y en recuerdos que siempre nos acompañarán.",
-    image: "/images/story/05.jpg?v=20261019",
+    image: "/images/story/05.jpg?v=20261019-2145",
   },
   {
     year: "2026",
     title: "El viaje que cambió todo",
     description:
       "Europa nos regaló momentos inolvidables y el comienzo de una nueva etapa. Allí decidimos comprometernos y construir nuestro futuro juntos.",
-    image: "/images/story/06.jpeg?v=20261019",
+    image: "/images/story/06.jpeg?v=20261019-2145",
   },
 ];
 
