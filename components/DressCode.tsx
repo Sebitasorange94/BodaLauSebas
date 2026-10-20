@@ -12,17 +12,17 @@ const PINTEREST_INVITE_URL =
 
 function DressCodeGuide() {
   return (
-    <AnimatedSection className="mx-auto mb-12 w-full max-w-5xl">
+    <div className="mx-auto mb-12 w-full max-w-5xl">
       <Image
         src="/images/dress-code/codigo-vestuario.jpg?v=20261019"
         alt="Guía de código de vestuario y colores elegidos por los novios"
         width={1748}
         height={1240}
         sizes="(min-width: 1152px) 1024px, calc(100vw - 48px)"
-        unoptimized
+        loading="eager"
         className="h-auto w-full rounded-2xl border border-linen shadow-lg"
       />
-    </AnimatedSection>
+    </div>
   );
 }
 

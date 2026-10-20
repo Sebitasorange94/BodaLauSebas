@@ -8,15 +8,6 @@ const nextConfig: NextConfig = {
     localPatterns: [
       {
         pathname: "/images/**",
-        search: "",
-      },
-      {
-        pathname: "/images/story/**",
-        search: "?v=20261019-2145",
-      },
-      {
-        pathname: "/images/dress-code/**",
-        search: "?v=20261019",
       },
     ],
   },
