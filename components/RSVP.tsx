@@ -111,8 +111,7 @@ export default function RSVP() {
           <div className="bg-white/70 border border-linen rounded-2xl px-6 py-5 text-center">
             <p className="text-taupe text-sm md:text-base leading-relaxed italic">
               Con mucho cariño hemos reservado los puestos indicados en el
-              mensaje de tu invitación. Amamos a los más pequeños, pero este
-              será un evento solo para adultos. Agradecemos de corazón tu
+              mensaje de tu invitación. Agradecemos de corazón tu
               comprensión. 🤍
             </p>
           </div>
