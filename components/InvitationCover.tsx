@@ -41,7 +41,7 @@ export default function InvitationCover({
     >
       <div className="hidden md:block absolute inset-0">
         <Image
-          src="/images/cover-desktop.jpg"
+          src="/images/cover-desktop.jpg?v=20261019-2215"
           alt="Lau & Sebas"
           fill
           priority
@@ -52,7 +52,7 @@ export default function InvitationCover({
 
       <div className="block md:hidden absolute inset-0">
         <Image
-          src="/images/cover-mobile.jpg"
+          src="/images/cover-mobile.jpg?v=20261019-2215"
           alt="Lau & Sebas"
           fill
           priority
