@@ -3,7 +3,7 @@ import AnimatedSection from "./AnimatedSection";
 
 export default function Gifts() {
   return (
-    <section className="bg-cream py-20 md:py-24">
+    <section id="gifts" className="bg-cream py-20 md:py-24">
       <div className="max-w-3xl mx-auto text-center px-6">
         <AnimatedSection>
           <p className="uppercase tracking-[6px] text-sage mb-4 text-sm md:text-base">

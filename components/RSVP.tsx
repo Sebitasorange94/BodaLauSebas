@@ -38,6 +38,19 @@ export default function RSVP() {
   const [error, setError] = useState("");
   const [backgroundImageAvailable, setBackgroundImageAvailable] = useState(true);
 
+  const handleAddAnotherGuest = () => {
+    setNombre("");
+    setTelefono("");
+    setAsiste(null);
+    setRestricciones("");
+    setError("");
+    setStatus("idle");
+  };
+
+  const handleContinue = () => {
+    document.getElementById("gifts")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
@@ -134,6 +147,30 @@ export default function RSVP() {
                   ? "Recibimos tu confirmación. ¡Será un día maravilloso contigo!"
                   : "Recibimos tu respuesta. Te llevaremos en el corazón ese día."}
               </p>
+              <p className="text-taupe text-sm mt-6">
+                ¿Tu invitación incluye a más personas? Registra cada respuesta
+                por separado para que podamos contarla correctamente.
+              </p>
+              <div className="mt-6 flex flex-col sm:flex-row justify-center gap-3">
+                <motion.button
+                  type="button"
+                  onClick={handleAddAnotherGuest}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="bg-cocoa hover:bg-taupe text-cream px-6 py-3 rounded-full uppercase tracking-[2px] text-xs md:text-sm shadow-lg transition-colors duration-300"
+                >
+                  Registrar a otra persona
+                </motion.button>
+                <motion.button
+                  type="button"
+                  onClick={handleContinue}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="border border-sage/40 text-sage hover:bg-sage/10 px-6 py-3 rounded-full uppercase tracking-[2px] text-xs md:text-sm transition-colors duration-300"
+                >
+                  Continuar navegando
+                </motion.button>
+              </div>
             </motion.div>
           ) : (
             <form

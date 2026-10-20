@@ -65,21 +65,24 @@ export default function DressCode() {
                 href={PINTEREST_BOARD_URL}
               />
             </div>
-            <p className="mt-4 text-center text-sm text-ink">
-              ¿No carga la vista previa?{" "}
+            <div className="mt-6 flex flex-col items-center gap-3 text-center">
+              <p className="text-sm text-ink">
+                ¿No aparece la vista previa en tu celular? Abre el tablero
+                directamente en Pinterest.
+              </p>
               <a
                 href={PINTEREST_INVITE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-cocoa underline underline-offset-4 hover:text-sage"
+                className="inline-flex min-h-12 items-center justify-center rounded-full bg-cocoa px-7 py-3 text-sm font-medium tracking-wide text-cream shadow-lg transition-colors hover:bg-taupe"
               >
-                Abrir el tablero en Pinterest
+                Abrir tablero en Pinterest
               </a>
-            </p>
+            </div>
           </div>
           <Script
             src="https://assets.pinterest.com/js/pinit.js"
-            strategy="lazyOnload"
+            strategy="afterInteractive"
           />
         </AnimatedSection>
 

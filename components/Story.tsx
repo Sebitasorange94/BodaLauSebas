@@ -52,7 +52,7 @@ const timeline = [
 ];
 
 const SWIPE_THRESHOLD = 60;
-const AUTOPLAY_DELAY = 5000; // ms de inactividad antes de avanzar solo
+const AUTOPLAY_DELAY = 7000; // ms de inactividad antes de avanzar solo
 
 export default function Story() {
   const [index, setIndex] = useState(0);
@@ -66,7 +66,16 @@ export default function Story() {
   // newIndex fuera de rango se ignora en navegación manual (goTo),
   // pero el autoplay usa goToLoop para poder volver al inicio.
   const goTo = (newIndex: number) => {
-    if (newIndex < 0 || newIndex > total - 1) return;
+    if (newIndex < 0) {
+      setDirection(-1);
+      setIndex(0);
+      return;
+    }
+    if (newIndex > total - 1) {
+      setDirection(1);
+      setIndex(0);
+      return;
+    }
     setDirection(newIndex > index ? 1 : -1);
     setIndex(newIndex);
   };
@@ -155,7 +164,7 @@ export default function Story() {
                 initial="enter"
                 animate="center"
                 exit="exit"
-                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
                 drag="x"
                 dragConstraints={{ left: 0, right: 0 }}
                 dragElastic={0.15}

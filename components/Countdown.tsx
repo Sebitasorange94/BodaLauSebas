@@ -46,38 +46,47 @@ export default function Countdown() {
   }, []);
 
   return (
-    <section className="bg-cream py-20 md:py-24 text-center">
-      <AnimatedSection>
-        <p className="uppercase tracking-[6px] text-sage mb-4 text-sm md:text-base">
-          Falta poco
-        </p>
+    <section className="relative isolate overflow-hidden bg-cream py-20 md:py-24 text-center">
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+        <div
+          className="absolute inset-0 scale-105 bg-[url('/images/countdown-fondo.jpg')] bg-cover bg-center blur-[4px] md:bg-[position:center_25%]"
+        />
+        <div className="absolute inset-0 bg-cream/65" />
+      </div>
 
-        <h2 className="font-title text-4xl sm:text-5xl text-cocoa mb-10 md:mb-14">
-          Nuestro Gran Día
-        </h2>
-      </AnimatedSection>
-
-      <AnimatedSection delay={0.1}>
-        {timeLeft?.done ? (
-          <p className="font-title text-3xl md:text-5xl text-cocoa px-6">
-            ¡Llegó el gran día! 🤍
+      <div className="relative z-10">
+        <AnimatedSection>
+          <p className="uppercase tracking-[6px] text-sage mb-4 text-sm md:text-base">
+            Falta poco para
           </p>
-        ) : (
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto px-4 md:px-6">
-            <Card value={timeLeft?.days} label="Días" />
-            <Card value={timeLeft?.hours} label="Horas" />
-            <Card value={timeLeft?.minutes} label="Minutos" />
-            <Card value={timeLeft?.seconds} label="Segundos" />
-          </div>
-        )}
-      </AnimatedSection>
+
+          <h2 className="font-title text-4xl sm:text-5xl text-cocoa mb-10 md:mb-14">
+            Nuestro Gran Día
+          </h2>
+        </AnimatedSection>
+
+        <AnimatedSection delay={0.1}>
+          {timeLeft?.done ? (
+            <p className="font-title text-3xl md:text-5xl text-cocoa px-6">
+              ¡Llegó el gran día! 🤍
+            </p>
+          ) : (
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto px-4 md:px-6">
+              <Card value={timeLeft?.days} label="Días" />
+              <Card value={timeLeft?.hours} label="Horas" />
+              <Card value={timeLeft?.minutes} label="Minutos" />
+              <Card value={timeLeft?.seconds} label="Segundos" />
+            </div>
+          )}
+        </AnimatedSection>
+      </div>
     </section>
   );
 }
 
 function Card({ value, label }: { value?: number; label: string }) {
   return (
-    <div className="bg-white rounded-3xl p-6 md:p-8 shadow-lg border border-linen">
+    <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-6 md:p-8 shadow-lg border border-linen">
       <h3 className="font-title text-4xl md:text-5xl text-cocoa tabular-nums">
         {value !== undefined ? String(value).padStart(2, "0") : "—"}
       </h3>

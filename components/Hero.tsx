@@ -37,6 +37,28 @@ export default function Hero() {
           className="object-cover object-center md:object-contain"
         />
 
+        <motion.div
+          aria-hidden="true"
+          className="absolute inset-0"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: [0, 0, 1, 1, 0] }}
+          transition={{
+            duration: 12,
+            times: [0, 0.4, 0.5, 0.9, 1],
+            ease: "linear",
+            repeat: Infinity,
+          }}
+        >
+          <Image
+            src="/images/rsvp-fondo.jpg"
+            alt=""
+            fill
+            preload
+            sizes="100vw"
+            className="object-cover object-center md:object-contain"
+          />
+        </motion.div>
+
         {/* Degradado suave: oscurece solo arriba y abajo para que el texto
             se lea sin opacar la foto */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/10 to-black/55" />
@@ -63,7 +85,7 @@ export default function Hero() {
             <p className="font-body text-white/95 text-sm md:text-lg max-w-xl leading-relaxed drop-shadow-md mb-6 md:mb-8">
               Todo comenzó sin esperarlo,
               <br />
-              el amor escribió el resto.
+              Dios escribió el resto.
             </p>
 
             <motion.button
