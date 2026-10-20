@@ -289,7 +289,7 @@ export default function Story() {
           className="relative isolate mt-20 overflow-hidden rounded-3xl bg-white/55 text-center shadow-lg md:mt-28 md:overflow-visible md:rounded-none md:bg-transparent md:shadow-none"
           delay={0.1}
         >
-          <div className="pointer-events-none relative aspect-[9/16] w-full overflow-hidden bg-cocoa/5 md:hidden">
+          <div className="relative aspect-[9/16] w-full overflow-hidden bg-cocoa/5 md:hidden">
             <video
               autoPlay
               muted
