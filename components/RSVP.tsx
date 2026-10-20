@@ -2,6 +2,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 
@@ -35,6 +36,7 @@ export default function RSVP() {
   const [restricciones, setRestricciones] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
+  const [backgroundImageAvailable, setBackgroundImageAvailable] = useState(true);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -72,8 +74,24 @@ export default function RSVP() {
   `;
 
   return (
-    <section id="rsvp" className="bg-sand py-20 md:py-28">
-      <div className="max-w-2xl mx-auto px-6">
+    <section
+      id="rsvp"
+      className="relative isolate overflow-hidden bg-sand py-20 md:py-28"
+    >
+      {backgroundImageAvailable && (
+        <Image
+          src="/images/rsvp-fondo.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          aria-hidden="true"
+          onError={() => setBackgroundImageAvailable(false)}
+          className="pointer-events-none scale-105 object-cover blur-[3px]"
+        />
+      )}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-sand/55 via-sand/35 to-sand/50" />
+
+      <div className="relative z-10 mx-auto max-w-2xl px-6">
         <AnimatedSection className="text-center mb-10 md:mb-12">
           <p className="uppercase tracking-[6px] text-sage mb-4 text-sm md:text-base">
             Confirma tu asistencia

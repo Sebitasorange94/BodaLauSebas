@@ -1,21 +1,21 @@
 @import "tailwindcss";
 
-/* ─── Paleta de la boda ───────────────────────────────
+/* ─── Paleta pastel de la boda ─────────────────────────
    Un solo lugar para todos los colores. En los
    componentes se usan como bg-cream, text-cocoa, etc. */
 @theme {
-  --color-sage: #aeb8a5; /* verde salvia */
-  --color-sage-dark: #8fa083; /* salvia oscuro (hover/acentos) */
-  --color-cocoa: #6b5b55; /* café principal (títulos) */
-  --color-taupe: #7a6a63; /* café suave (texto) */
-  --color-ink: #6f6763; /* texto de párrafos */
-  --color-cream: #f8f5f0; /* fondo claro principal */
-  --color-sand: #f7f2ec; /* fondo alterno */
-  --color-linen: #efe8de; /* bordes suaves */
-  --color-champagne: #d8c8a8; /* champaña */
-  --color-blush: #d9bdb5; /* rosa empolvado */
-  --color-blush-dark: #c9a89f; /* rosa hover */
-  --color-gold: #c9a66b; /* dorado (divisores) */
+  --color-sage: #667760; /* salvia para acentos y etiquetas */
+  --color-sage-dark: #56694f; /* salvia para hover */
+  --color-cocoa: #705f68; /* malva suave para títulos */
+  --color-taupe: #756970; /* malva grisáceo para texto */
+  --color-ink: #6c6469; /* texto de párrafos */
+  --color-cream: #fcf9f7; /* fondo claro principal */
+  --color-sand: #f7f1f3; /* fondo alterno rosado */
+  --color-linen: #eee4e9; /* bordes suaves */
+  --color-champagne: #e8dcc5; /* champaña */
+  --color-blush: #f2e6e9; /* rosa pastel */
+  --color-blush-dark: #ebdde1; /* rosa hover */
+  --color-gold: #c5ad83; /* dorado suave (divisores) */
 }
 
 .font-title {
@@ -27,14 +27,14 @@
 }
 
 body {
-  background: #f8f5f0;
-  color: #6f6763;
+  background: #fcf9f7;
+  color: #6c6469;
   font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
 }
 
 ::selection {
-  background: #d8c8a8;
-  color: #6b5b55;
+  background: #e8dcc5;
+  color: #705f68;
 }
 
 /* Evitar doble línea de scroll en página principal */

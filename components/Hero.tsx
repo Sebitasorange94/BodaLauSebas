@@ -17,7 +17,6 @@ export default function Hero() {
       {/* svh = alto real del viewport en móvil (sin saltos por la barra del navegador).
           En desktop la foto completa siempre es visible gracias a object-contain. */}
       <div className="relative w-full h-[88svh] md:h-[92vh]">
-
         {/* Fondo desenfocado que rellena los lados */}
         <Image
           src="/images/portada.jpg"
@@ -35,7 +34,7 @@ export default function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-contain"
+          className="object-cover object-center md:object-contain"
         />
 
         {/* Degradado suave: oscurece solo arriba y abajo para que el texto

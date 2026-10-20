@@ -12,42 +12,42 @@ const timeline = [
     title: "Todo comenzó sin esperarlo",
     description:
       "Gracias a una amiga en común comenzamos a hablar. Lo que empezó como una amistad nos permitió conocernos, compartir momentos especiales y acercarnos también a nuestras familias.",
-    image: "/images/story/01.jpg",
+    image: "/images/story/01.jpg?v=20261019",
   },
   {
     year: "2023",
     title: "Una tarde, un café y muchas risas",
     description:
       "Nuestra primera cita fue en Libre de Culpa. Entre café, conversaciones y risas descubrimos que había algo especial entre nosotros.",
-    image: "/images/story/02.jpg",
+    image: "/images/story/02.jpg?v=20261019",
   },
   {
     year: "2023",
     title: "Nuestro primer viaje",
     description:
       "Diciembre nos regaló nuestra primera aventura juntos. Sogamoso se convirtió en el escenario de recuerdos que todavía llevamos en el corazón.",
-    image: "/images/story/03.jpg",
+    image: "/images/story/03.jpg?v=20261019",
   },
   {
     year: "2024",
     title: "Comenzó oficialmente nuestra historia",
     description:
       "En febrero decidimos dar el siguiente paso y comenzar este camino como pareja.",
-    image: "/images/story/04.jpg",
+    image: "/images/story/04.jpg?v=20261019",
   },
   {
     year: "2025",
     title: "Explorando el mundo juntos",
     description:
       "Panamá y Brasil se convirtieron en nuevas páginas de nuestra historia y en recuerdos que siempre nos acompañarán.",
-    image: "/images/story/05.jpg",
+    image: "/images/story/05.jpg?v=20261019",
   },
   {
     year: "2026",
     title: "El viaje que cambió todo",
     description:
       "Europa nos regaló momentos inolvidables y el comienzo de una nueva etapa. Allí decidimos comprometernos y construir nuestro futuro juntos.",
-    image: "/images/story/06.jpg",
+    image: "/images/story/06.jpeg?v=20261019",
   },
 ];
 
@@ -112,11 +112,29 @@ export default function Story() {
   };
 
   return (
-    <section id="story" className="bg-cream py-20 md:py-28 overflow-hidden">
-      <div className="max-w-5xl mx-auto px-6">
+    <section
+      id="story"
+      className="relative isolate overflow-hidden bg-[#f2e8e2] py-20 md:bg-cream md:py-28"
+    >
+      <div className="pointer-events-none absolute inset-0 hidden overflow-hidden md:block">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          aria-hidden="true"
+          className="h-full w-full object-cover grayscale opacity-25"
+        >
+          <source src="/videos/portada.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div className="pointer-events-none absolute inset-0 hidden bg-cream/70 md:block" />
+
+      <div className="relative z-10 mx-auto max-w-5xl px-6">
 
         {/* Encabezado */}
-        <AnimatedSection className="text-center mb-14 md:mb-16">
+        <AnimatedSection className="mx-auto mb-14 max-w-3xl rounded-3xl bg-cream/60 px-4 py-5 text-center shadow-sm backdrop-blur-sm md:mb-16 md:rounded-none md:bg-transparent md:p-0 md:shadow-none md:backdrop-blur-0">
           <p className="uppercase tracking-[6px] md:tracking-[8px] text-sage mb-4 text-sm md:text-base">
             Nuestra Historia
           </p>
@@ -154,6 +172,7 @@ export default function Story() {
                     overflow-hidden
                     rounded-[24px]
                     md:rounded-[32px]
+                    bg-sand/60
                     shadow-2xl
                     select-none
                   "
@@ -164,7 +183,7 @@ export default function Story() {
                     fill
                     draggable={false}
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover pointer-events-none"
+                    className="object-contain pointer-events-none md:object-cover"
                   />
                 </div>
 
@@ -257,18 +276,37 @@ export default function Story() {
         </div>
 
         {/* Final */}
-        <AnimatedSection className="text-center mt-20 md:mt-28" delay={0.1}>
-          <p className="text-sage tracking-[6px] uppercase mb-4 text-sm md:text-base">
-            2027
-          </p>
+        <AnimatedSection
+          className="relative isolate mt-20 overflow-hidden rounded-3xl bg-white/55 text-center shadow-lg md:mt-28 md:overflow-visible md:rounded-none md:bg-transparent md:shadow-none"
+          delay={0.1}
+        >
+          <div className="pointer-events-none relative aspect-[9/16] w-full overflow-hidden bg-cocoa/5 md:hidden">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-hidden="true"
+              className="h-full w-full object-cover grayscale opacity-80"
+            >
+              <source src="/videos/nueva-aventura-movil.mp4" type="video/mp4" />
+            </video>
+          </div>
 
-          <h3 className="font-title text-4xl sm:text-5xl text-cocoa mb-6">
-            Nuestra nueva aventura
-          </h3>
+          <div className="relative z-10 px-4 py-8 md:rounded-none md:bg-transparent md:p-0 md:backdrop-blur-0">
+            <p className="text-sage tracking-[6px] uppercase mb-4 text-sm md:text-base">
+              2027
+            </p>
 
-          <p className="text-ink text-lg md:text-xl">
-            Y ahora queremos compartir con ustedes el día más importante de nuestras vidas.
-          </p>
+            <h3 className="font-title text-4xl sm:text-5xl text-cocoa mb-6">
+              Nuestra nueva aventura
+            </h3>
+
+            <p className="text-ink text-lg md:text-xl">
+              Y ahora queremos compartir con ustedes el día más importante de nuestras vidas.
+            </p>
+          </div>
         </AnimatedSection>
 
       </div>

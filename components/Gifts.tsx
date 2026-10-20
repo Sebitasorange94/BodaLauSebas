@@ -47,10 +47,26 @@ export default function Gifts() {
             <p className="uppercase tracking-[4px] text-sage text-xs md:text-sm mb-6">
               O si prefieres, por Bre-B
             </p>
+            <p className="text-ink text-sm md:text-base leading-relaxed max-w-xl mx-auto mb-8">
+              Escanea el código QR desde la aplicación del banco con la que
+              realizarás la consignación y confirma el envío con QR.
+            </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-6">
               {[
-                { name: "Lau", key: "318 477 7740", src: "/images/qr-lau.png" },
-                { name: "Sebas", key: "@amigo1023937126", src: "/images/qr-sebas.jpeg" },
+                {
+                  name: "Lau",
+                  key: "318 477 7740",
+                  fullName: "Laura Catalina Perez Cortes",
+                  bank: "Banco de Bogotá",
+                  src: "/images/qr-lau.png",
+                },
+                {
+                  name: "Sebas",
+                  key: "@amigo1023937126",
+                  fullName: "Juan Sebastian Vargas Naranjo",
+                  bank: "Banco Caja Social",
+                  src: "/images/qr-sebas.jpeg",
+                },
               ].map((p) => (
                 <div key={p.name} className="flex flex-col items-center">
                   <p className="font-title text-xl text-cocoa mb-3">{p.name}</p>
@@ -62,6 +78,8 @@ export default function Gifts() {
                     />
                   </div>
                   <p className="text-taupe text-sm mt-3">{p.key}</p>
+                  <p className="text-ink text-sm mt-1">{p.fullName}</p>
+                  <p className="text-taupe text-xs mt-1">{p.bank}</p>
                 </div>
               ))}
             </div>
