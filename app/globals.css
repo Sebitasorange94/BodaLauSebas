@@ -63,11 +63,8 @@ html.scroll-experience main > section {
 
 html.scroll-experience main > section#countdown,
 html.scroll-experience main > section#celebration {
-  display: flex;
-  min-height: clamp(34rem, 72svh, 42rem);
-  flex-direction: column;
-  justify-content: center;
-  padding-block: clamp(2rem, 5svh, 3.5rem);
+  min-height: 0;
+  padding-block: clamp(2rem, 4svh, 3rem);
 }
 
 @supports (animation-timeline: view()) {
