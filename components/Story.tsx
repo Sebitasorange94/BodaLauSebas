@@ -52,7 +52,7 @@ const timeline = [
 ];
 
 const SWIPE_THRESHOLD = 60;
-const AUTOPLAY_DELAY = 7000; // ms de inactividad antes de avanzar solo
+const AUTOPLAY_DELAY = 5000; // pausa antes de avanzar mientras la sección está visible
 
 export default function Story() {
   const [index, setIndex] = useState(0);

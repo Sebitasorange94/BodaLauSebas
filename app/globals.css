@@ -61,9 +61,41 @@ html.scroll-experience main > section {
   scroll-snap-stop: normal;
 }
 
+html.scroll-experience main > section#countdown,
+html.scroll-experience main > section#celebration {
+  display: flex;
+  min-height: clamp(34rem, 72svh, 42rem);
+  flex-direction: column;
+  justify-content: center;
+  padding-block: clamp(2rem, 5svh, 3.5rem);
+}
+
+@supports (animation-timeline: view()) {
+  html.scroll-experience main > section {
+    animation: section-arrive linear both;
+    animation-timeline: view(block);
+    animation-range: entry 0% entry 32%;
+  }
+
+  @keyframes section-arrive {
+    from {
+      opacity: 0.78;
+      transform: translateY(24px) scale(0.99);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html,
   body {
     scroll-behavior: auto;
+  }
+
+  html.scroll-experience main > section {
+    animation: none;
   }
 }
