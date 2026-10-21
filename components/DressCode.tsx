@@ -14,10 +14,10 @@ function DressCodeGuide() {
   return (
     <div className="mx-auto mb-12 w-full max-w-5xl">
       <Image
-        src="/images/dress-code/codigo-vestuario.jpg?v=20261019"
+        src="/images/dress-code/codigo-vestuario.jpg?v=20261021-1155"
         alt="Guía de código de vestuario y colores elegidos por los novios"
-        width={1748}
-        height={1240}
+        width={2400}
+        height={1792}
         sizes="(min-width: 1152px) 1024px, calc(100vw - 48px)"
         loading="eager"
         className="h-auto w-full rounded-2xl border border-linen shadow-lg"
@@ -28,7 +28,7 @@ function DressCodeGuide() {
 
 export default function DressCode() {
   return (
-    <section className="bg-cream py-20 md:py-28">
+    <section id="dress-code" className="bg-cream py-20 md:py-28">
       <div className="max-w-6xl mx-auto px-6">
         <AnimatedSection className="text-center mb-14 md:mb-20">
           <p className="uppercase tracking-[8px] text-sage mb-4 text-sm md:text-base">

@@ -39,10 +39,12 @@ export default function Home() {
       document.body.style.overflow = "auto";
       document.documentElement.style.overflow = "auto";
     }
+    document.documentElement.classList.toggle("scroll-experience", opened);
 
     return () => {
       document.body.style.overflow = "auto";
       document.documentElement.style.overflow = "auto";
+      document.documentElement.classList.remove("scroll-experience");
     };
   }, [opened]);
 

@@ -3,7 +3,7 @@ import AnimatedSection from "./AnimatedSection";
 
 export default function WeddingInfo() {
   return (
-    <section className="bg-sand py-20 md:py-24">
+    <section id="celebration" className="bg-sand py-20 md:py-24">
       <div className="max-w-4xl mx-auto px-6 text-center">
         <AnimatedSection>
           <p className="uppercase tracking-[6px] text-sage mb-4 text-sm md:text-base">

@@ -43,3 +43,27 @@ body {
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
+
+html.scroll-experience {
+  scroll-snap-type: y proximity;
+  scroll-padding-block: 0;
+  scrollbar-width: none;
+}
+
+html.scroll-experience::-webkit-scrollbar,
+html.scroll-experience body::-webkit-scrollbar {
+  display: none;
+}
+
+html.scroll-experience main > section {
+  min-height: 100svh;
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html,
+  body {
+    scroll-behavior: auto;
+  }
+}

@@ -13,7 +13,7 @@ const WAZE_URL = `https://waze.com/ul?q=${VENUE_QUERY}&navigate=yes`;
 
 export default function LocationMap() {
   return (
-    <section className="bg-sand py-20 pb-28 md:py-28">
+    <section id="location" className="bg-sand py-20 pb-28 md:py-28">
       <div className="max-w-5xl mx-auto px-6">
         <AnimatedSection className="text-center mb-10 md:mb-12">
           <p className="uppercase tracking-[6px] md:tracking-[8px] text-sage mb-4 text-sm md:text-base">

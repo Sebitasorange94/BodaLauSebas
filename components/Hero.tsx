@@ -13,10 +13,13 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#2C2A28]">
+    <section
+      id="hero"
+      className="relative w-full overflow-hidden bg-[#2C2A28]"
+    >
       {/* svh = alto real del viewport en móvil (sin saltos por la barra del navegador).
           En desktop la foto completa siempre es visible gracias a object-contain. */}
-      <div className="relative w-full h-[88svh] md:h-[92vh]">
+      <div className="relative h-[100svh] w-full">
         {/* Fondo desenfocado que rellena los lados */}
         <Image
           src="/images/portada.jpg"

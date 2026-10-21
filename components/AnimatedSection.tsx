@@ -24,11 +24,11 @@ export default function AnimatedSection({
 }: AnimatedSectionProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y, filter: "blur(8px)" }}
-      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      initial={{ opacity: 0, y, scale: 0.985, filter: "blur(10px)" }}
+      whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{
-        duration: 0.7,
+        duration: 0.85,
         delay,
         ease: [0.22, 1, 0.36, 1],
       }}

@@ -46,7 +46,10 @@ export default function Countdown() {
   }, []);
 
   return (
-    <section className="relative isolate overflow-hidden bg-cream py-20 md:py-24 text-center">
+    <section
+      id="countdown"
+      className="relative isolate overflow-hidden bg-cream py-20 text-center md:py-24"
+    >
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <div
           className="absolute inset-0 scale-105 bg-[url('/images/countdown-fondo.jpg')] bg-cover bg-center blur-[4px] md:bg-[position:center_25%]"
