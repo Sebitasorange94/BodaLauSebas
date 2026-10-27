@@ -14,10 +14,10 @@ function DressCodeGuide() {
   return (
     <div className="mx-auto mb-12 w-full max-w-5xl">
       <Image
-        src="/images/dress-code/codigo-vestuario.jpg?v=20261021-1220"
+        src="/images/dress-code/codigo-vestuario.jpg?v=20261026-2045"
         alt="Guía de código de vestuario y colores elegidos por los novios"
-        width={2400}
-        height={1792}
+        width={1240}
+        height={1748}
         sizes="(min-width: 1152px) 1024px, calc(100vw - 48px)"
         loading="eager"
         className="h-auto w-full rounded-2xl border border-linen shadow-lg"
