@@ -2,11 +2,12 @@
 "use client";
 
 import Image from "next/image";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import AnimatedSection from "./AnimatedSection";
 
-const MAP_DELAY_MS = 2500;
+const MAP_REVEAL_DELAY_MS = 1200;
+const MAP_FADE_DURATION_SECONDS = 6;
 const VENUE_NAME = "Hacienda Pilares del Rosal";
 const VENUE_QUERY = encodeURIComponent(
   "Hacienda Pilares del Rosal, El Rosal, Cundinamarca, Colombia"
@@ -15,35 +16,32 @@ const GOOGLE_MAPS_URL = `https://www.google.com/maps/dir/?api=1&destination=${VE
 const WAZE_URL = `https://waze.com/ul?q=${VENUE_QUERY}&navigate=yes`;
 
 export default function LocationMap() {
+  const [isMapLoaded, setIsMapLoaded] = useState(false);
+  const [isSectionVisible, setIsSectionVisible] = useState(false);
   const [showMap, setShowMap] = useState(false);
   const sectionRef = useRef<HTMLElement | null>(null);
-  const mapTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const section = sectionRef.current;
     if (!section) return;
 
     const observer = new IntersectionObserver(([entry]) => {
-      if (mapTimerRef.current) clearTimeout(mapTimerRef.current);
-
       if (entry.isIntersecting) {
-        mapTimerRef.current = setTimeout(() => {
-          setShowMap(true);
-          mapTimerRef.current = null;
-        }, MAP_DELAY_MS);
-      } else {
-        setShowMap(false);
-        mapTimerRef.current = null;
+        setIsSectionVisible(true);
+        observer.disconnect();
       }
     });
 
     observer.observe(section);
-
-    return () => {
-      observer.disconnect();
-      if (mapTimerRef.current) clearTimeout(mapTimerRef.current);
-    };
+    return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    if (!isMapLoaded || !isSectionVisible) return;
+
+    const timer = setTimeout(() => setShowMap(true), MAP_REVEAL_DELAY_MS);
+    return () => clearTimeout(timer);
+  }, [isMapLoaded, isSectionVisible]);
 
   return (
     <section
@@ -77,34 +75,35 @@ export default function LocationMap() {
           </p>
         </AnimatedSection>
 
-        <AnimatePresence>
-          {showMap && (
-            <motion.div
-              key="location-map"
-              initial={{ opacity: 0, y: 16, scale: 0.985 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -12, scale: 0.99 }}
-              transition={{
-                duration: 0.65,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-            >
-              <div className="rounded-[20px] md:rounded-[32px] overflow-hidden shadow-2xl border border-linen">
-                <iframe
-                  title="Ubicación del matrimonio"
-                  src={`https://www.google.com/maps?q=${VENUE_QUERY}&output=embed`}
-                  width="100%"
-                  height="400"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="w-full h-[240px] md:h-[420px]"
-                />
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        <motion.div
+          initial={{ opacity: 0, y: 16, scale: 0.985 }}
+          animate={
+            showMap
+              ? { opacity: 1, y: 0, scale: 1 }
+              : { opacity: 0, y: 16, scale: 0.985 }
+          }
+          transition={{
+            duration: MAP_FADE_DURATION_SECONDS,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          aria-hidden={!showMap}
+          className={showMap ? undefined : "pointer-events-none"}
+        >
+          <div className="rounded-[20px] md:rounded-[32px] overflow-hidden shadow-2xl border border-linen">
+            <iframe
+              title="Ubicación del matrimonio"
+              src={`https://www.google.com/maps?q=${VENUE_QUERY}&output=embed`}
+              onLoad={() => setIsMapLoaded(true)}
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full h-[240px] md:h-[420px]"
+            />
+          </div>
+        </motion.div>
 
         <div className="relative z-10 mt-10 flex flex-col items-center gap-4 overflow-visible pb-2 md:mt-8">
           <p className="text-ink text-sm md:text-base">
@@ -119,8 +118,8 @@ export default function LocationMap() {
               whileTap={{ scale: 0.97 }}
               className="
                 inline-flex min-h-12 items-center gap-2
-                bg-blush hover:bg-blush-dark
-                text-cocoa px-6 md:px-8 py-3 md:py-4
+                bg-berry hover:bg-berry-dark
+                text-cream px-6 md:px-8 py-3 md:py-4
                 rounded-full shadow-xl
                 transition-colors duration-300
                 text-sm md:text-base tracking-wide
@@ -136,8 +135,8 @@ export default function LocationMap() {
               whileTap={{ scale: 0.97 }}
               className="
                 inline-flex min-h-12 items-center gap-2
-                bg-blush hover:bg-blush-dark
-                text-cocoa px-6 md:px-8 py-3 md:py-4
+                bg-berry hover:bg-berry-dark
+                text-cream px-6 md:px-8 py-3 md:py-4
                 rounded-full shadow-xl
                 transition-colors duration-300
                 text-sm md:text-base tracking-wide

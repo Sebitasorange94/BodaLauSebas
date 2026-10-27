@@ -139,7 +139,7 @@ export default function Story() {
     <section
       ref={sectionRef}
       id="story"
-      className="relative isolate overflow-hidden bg-[#f2e8e2] py-20 md:bg-cream md:py-28"
+      className="relative isolate overflow-hidden bg-sand py-20 md:bg-cream md:py-28"
     >
       <div className="pointer-events-none absolute inset-0 hidden overflow-hidden md:block">
         <video
@@ -208,7 +208,7 @@ export default function Story() {
                     fill
                     draggable={false}
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-contain pointer-events-none md:object-cover"
+                    className="object-cover object-center pointer-events-none"
                   />
                 </div>
 
@@ -267,7 +267,7 @@ export default function Story() {
         </div>
 
         {/* Flechas (mobile) + puntos indicadores */}
-        <div className="flex items-center justify-center gap-6 mt-8 md:mt-10">
+        <div className="flex items-center justify-center gap-6 mt-12 md:mt-10">
           <button
             aria-label="Anterior"
             onClick={() => goTo(index - 1)}
@@ -305,7 +305,7 @@ export default function Story() {
           className="relative isolate mt-20 overflow-hidden rounded-3xl bg-white/55 text-center shadow-lg md:mt-28 md:overflow-visible md:rounded-none md:bg-transparent md:shadow-none"
           delay={0.1}
         >
-          <div className="relative aspect-[9/16] w-full overflow-hidden bg-cocoa/5 md:hidden">
+          <div className="relative aspect-[9/16] w-full overflow-hidden bg-cocoa/5 md:mx-auto md:mb-8 md:max-w-[280px] md:rounded-2xl md:shadow-xl">
             <video
               autoPlay
               muted

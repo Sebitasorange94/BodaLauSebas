@@ -15,7 +15,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative w-full overflow-hidden bg-[#2C2A28]"
+      className="relative w-full overflow-hidden bg-cocoa"
     >
       {/* svh = alto real del viewport en móvil (sin saltos por la barra del navegador).
           En desktop la foto completa siempre es visible gracias a object-contain. */}
