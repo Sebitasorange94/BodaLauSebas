@@ -94,9 +94,12 @@ export default function Home() {
           <p className="text-cream/60 uppercase tracking-[5px] text-xs">
             20 · 02 · 2027
           </p>
-          <p className="text-cream/40 mt-4 text-sm italic">
-            Los esperamos con el corazón
+          <p className="mx-auto mt-6 max-w-2xl px-6 text-sm italic leading-relaxed text-cream/75 md:text-base">
+            Gracias por acompañarnos y ser parte de nuestra historia. Su cariño
+            convierte este sueño en un recuerdo que llevaremos siempre en el
+            corazón. Con todo nuestro amor,
           </p>
+          <p className="mt-4 font-title text-cream text-2xl">Lau &amp; Sebas</p>
         </footer>
       </main>
 
